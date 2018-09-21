@@ -17,7 +17,7 @@ class ForegroundBackgroundListener2 : DefaultLifecycleObserver {
     * This method will be called before the LifecycleOwner's onPause method is called.
     * */
     override fun onPause(owner: LifecycleOwner) {
-        // compile with -jvm-target 1.8
+        // compile with -jvm-target 1.8 no super call allowed
         //super.onPause(owner)
     }
 
