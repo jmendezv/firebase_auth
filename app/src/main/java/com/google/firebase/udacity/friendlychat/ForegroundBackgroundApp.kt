@@ -5,7 +5,7 @@ import android.arch.lifecycle.ProcessLifecycleOwner
 
 class ForegroundBackgroundApp : Application() {
 
-    private lateinit var appObserver: ForegroundBackgroundListener
+    private lateinit var appObserver: ForegroundBackgroundListener2
 
     override fun onCreate() {
         super.onCreate()
@@ -14,7 +14,10 @@ class ForegroundBackgroundApp : Application() {
                 .get()
                 .lifecycle
                 .addObserver(
-                        ForegroundBackgroundListener())
-                                //.also { appObserver = it })
+                        ForegroundBackgroundListener2()
+                                .also {
+                                    appObserver = it
+                                }
+                )
     }
 }

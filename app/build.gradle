@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId "com.google.firebase.udacity.friendlychat"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
@@ -31,20 +31,20 @@ android {
         exclude 'META-INF/LICENSE-FIREBASE.txt'
         exclude 'META-INF/NOTICE'
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
-
     // Displaying images
     implementation 'com.github.bumptech.glide:glide:3.8.0'
-
     implementation 'com.google.firebase:firebase-core:16.0.1'
-
     implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.google.firebase:firebase-storage:16.0.1'
     // allows our app to receive Firebase notifications from the Firebase console
@@ -52,11 +52,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.google.firebase:firebase-config:16.0.0'
     implementation 'com.google.firebase:firebase-auth:16.0.2'
-
     implementation 'com.facebook.android:facebook-login:4.34.0'
-
     implementation 'com.firebaseui:firebase-ui-auth:4.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'android.arch.lifecycle:common-java8:1.1.1'
 }
 // Reads the config from the google-services jason file
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
